@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Joshua Citarella</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Joshua Citarella">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		*, body {
+			margin: 0; padding: 0;
+		}
+		body { background-color: black; }
+
+		/* CONTAINER DIV */
+		.cont {
+			position: relative;
+			height: 100vh; width: 100vw;
+			display: flex; align-items: center; justify-content: center;
+			padding: 15px;
+		}
+		
+
+		/* SVG */
+		svg {
+		}
+		.buttons { pointer-events: none; }
+		.buttons .butt { pointer-events: all; opacity: 0; }
+		.buttons:hover .butt { opacity: 0.65; }
+		.butt { cursor: pointer; pointer-events: all; transition: opacity 300ms; }
+		.butt:hover { opacity: 0 !important; }
+		clipPath { pointer-events: none; }
+
+		/* MODAL */
+		.modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+	  }
+		.modal-body {
+		  position:relative;
+		  padding:0px;
+		}
+		.close {
+		  position:absolute;
+		  right:-30px;
+		  top:0;
+		  z-index:999;
+		  font-size:2rem;
+		  font-weight: normal;
+		  color:#fff;
+		  opacity:1;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="cont">		
+
+		<svg width="743px" height="648px" viewBox="0 0 743 648" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <g id="triangle" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+
+	    	<!-- FUNCTIONAL PART OF SVG -->
+	    	
+	    	<!---- bg -->
+        <polygon fill="#131415" points="20.4710363 19.8500555 722.528964 19.8500555 371.5 627.850056"
+        	class="triangle-bg"
+        	></polygon>
+	    	
+	    	<!---- images -->
+		    <defs>
+		      <clipPath id="clip-1" clipPathUnits="userSpaceOnUse">
+						<polygon points="137.5 222.5 371.5 222.5 254.5 19.8500555"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-2" clipPathUnits="userSpaceOnUse">
+						<polygon points="371.5 222.5 605.5 222.5 488.5 19.8500555"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-3" clipPathUnits="userSpaceOnUse">
+						<polygon points="137.5 222.5 371.5 222.5 254.5 425.149944"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-4" clipPathUnits="userSpaceOnUse">
+						<polygon points="371.5 222.5 605.5 222.5 488.5 425.149944"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-5" clipPathUnits="userSpaceOnUse">
+						<polygon points="20.5 19.8500555 254.5 19.8500555 137.5 222.5"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-6" clipPathUnits="userSpaceOnUse">
+						<polygon points="254.5 19.8500555 488.5 19.8500555 371.5 222.5"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-7" clipPathUnits="userSpaceOnUse">
+						<polygon points="254.5 425.149944 488.5 425.149944 371.5 627.799889"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-8" clipPathUnits="userSpaceOnUse">
+						<polygon points="488.5 19.8500555 722.5 19.8500555 605.5 222.5"></polygon>
+		      </clipPath>
+		      <clipPath id="clip-9" clipPathUnits="userSpaceOnUse">
+						<polygon points="254.5 425.149944 488.5 425.149944 371.5 222.5"></polygon>
+		      </clipPath>
+		    </defs>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/u1.png" clip-path="url(#clip-1)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/u2.png" clip-path="url(#clip-2)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/d3.png" clip-path="url(#clip-3)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/d1.png" clip-path="url(#clip-4)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/d3.png" clip-path="url(#clip-5)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/d1.png" clip-path="url(#clip-6)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/d2.png" clip-path="url(#clip-7)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/d3.png" clip-path="url(#clip-8)"/>
+				<image width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="img/u2.png" clip-path="url(#clip-9)"/>
+
+	    	<!---- buttons -->
+	    	<g class="buttons">
+	        <polygon fill="#131415" points="137.5 222.5 371.5 222.5 254.5 19.8500555"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/DZwfEzTohD8"
+	        	></polygon>
+	        <polygon fill="#131415" points="371.5 222.5 605.5 222.5 488.5 19.8500555"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/GT0f1Tw3YXM"
+	        	></polygon>
+	        <polygon fill="#131415" points="137.5 222.5 371.5 222.5 254.5 425.149944"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/DZwfEzTohD8"
+	        	></polygon>
+	        <polygon fill="#131415" points="371.5 222.5 605.5 222.5 488.5 425.149944"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/GT0f1Tw3YXM"
+	        	></polygon>
+	        <polygon fill="#131415" points="20.5 19.8500555 254.5 19.8500555 137.5 222.5"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/GT0f1Tw3YXM"
+	        	></polygon>
+	        <polygon fill="#131415" points="254.5 19.8500555 488.5 19.8500555 371.5 222.5"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/DZwfEzTohD8"
+	        	></polygon>
+	        <polygon fill="#131415" points="254.5 425.149944 488.5 425.149944 371.5 627.799889"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/GT0f1Tw3YXM"
+	        	></polygon>
+	        <polygon fill="#131415" points="488.5 19.8500555 722.5 19.8500555 605.5 222.5"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/GT0f1Tw3YXM"
+	        	></polygon>
+	        <polygon fill="#131415" points="254.5 425.149944 488.5 425.149944 371.5 222.5"
+	        	class="butt"
+	        	data-toggle="modal" data-target="#j-modal"
+	        	data-src="https://www.youtube.com/embed/GT0f1Tw3YXM"
+	        	></polygon>
+        </g>
+
+	    	<!-- FUNCTIONAL PART OF SVG -->
+
+        <text id="text-•-text-•-text" font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="20" y="14">text • text • text</tspan>
+        </text>
+        <circle id="Oval" fill="#FFFFFF" cx="9.13149206" cy="14" r="4.5"></circle>
+        <circle id="Oval-Copy" fill="#FFFFFF" cx="733.594409" cy="14" r="4.5"></circle>
+        <text id="text-•-text-•-text-copy-3" font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="669.324219" y="14">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy-4" transform="translate(717.763140, 46.982741) rotate(-60.000000) translate(-717.763140, -46.982741) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="691.587358" y="49.4827414">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy-5" transform="translate(394.340490, 607.167203) rotate(-60.000000) translate(-394.340490, -607.167203) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="367.34049" y="609.667203">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy" transform="translate(25.577638, 47.482741) rotate(-300.000000) translate(-25.577638, -47.482741) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="-1.42236187" y="49.9827414">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy-6" transform="translate(348.711613, 607.167203) rotate(-300.000000) translate(-348.711613, -607.167203) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="322.535831" y="609.667203">text • text • text</tspan>
+        </text>
+        <circle id="Oval-Copy" fill="#FFFFFF" cx="371.5" cy="639.343619" r="4.5"></circle>
+    	</g>
+
+		</svg>
+
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="j-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>        
+	        <!-- 16:9 aspect ratio -->
+					<div class="embed-responsive embed-responsive-16by9">
+					  <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+					</div>
+	      </div>
+	    </div>
+	  </div>
+	</div> 
+  
+	<script type="text/javascript">
+
+/*
+	$("[id^='triangle-']").click(function () {
+		var videoUrl = null;
+		if (this.id === "triangle-1") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-2") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-3") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-4") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-5") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-6") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-7") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-8") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+		if (this.id === "triangle-9") { videoUrl = "https://www.youtube.com/watch?v=GT0f1Tw3YXM"; }
+
+		// https://getbootstrap.com/docs/4.0/components/modal/
+		$('#j-modal').modal(options)
+	});		
+*/
+	
+	$(document).ready(function () {
+
+		// via https://codepen.io/JacobLett/pen/xqpEYE
+
+		// Gets the video src from the data-src on each button
+		var $videoSrc;  
+		$('.butt').click(function() {
+	    $videoSrc = $(this).data( "src" );
+			console.log($videoSrc);
+		});
+		  
+		// when the modal is opened autoplay it  
+		$('#j-modal').on('shown.bs.modal', function (e) {
+		    
+			// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+			$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1" ); // &amp;showinfo=0 - we want related
+		})
+
+		// stop playing the youtube video when I close the modal
+		$('#j-modal').on('hide.bs.modal', function (e) {
+	    // a poor man's stop video
+	    $("#video").attr('src',$videoSrc); 
+		}) 
+
+
+	});
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

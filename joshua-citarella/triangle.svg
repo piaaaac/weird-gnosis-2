@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="743px" height="648px" viewBox="0 0 743 648" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>triangle</title>
+    <g id="triangle" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Line-Copy-5" fill="#131415" points="20.4710363 19.8500555 722.528964 19.8500555 371.5 627.850056"></polygon>
+        <polygon id="Line" fill="#D7C9C9" points="137.5 222.5 371.5 222.5 254.5 19.8500555"></polygon>
+        <polygon id="Line-Copy-6" fill="#D7C9C9" points="371.5 222.5 605.5 222.5 488.5 19.8500555"></polygon>
+        <polygon id="Line-Copy-2" fill="#D8D8D8" points="137.5 222.5 371.5 222.5 254.5 425.149944"></polygon>
+        <polygon id="Line-Copy-3" fill="#D8D8D8" points="371.5 222.5 605.5 222.5 488.5 425.149944"></polygon>
+        <polygon id="Line-Copy-4" fill="#D8D8D8" points="20.5 19.8500555 254.5 19.8500555 137.5 222.5"></polygon>
+        <polygon id="Line-Copy-5" fill="#D8D8D8" points="254.5 19.8500555 488.5 19.8500555 371.5 222.5"></polygon>
+        <polygon id="Line-Copy-8" fill="#D8D8D8" points="254.5 425.149944 488.5 425.149944 371.5 627.799889"></polygon>
+        <polygon id="Line-Copy-7" fill="#D8D8D8" points="488.5 19.8500555 722.5 19.8500555 605.5 222.5"></polygon>
+        <polygon id="Line-Copy" fill="#D7C9C9" points="254.5 425.149944 488.5 425.149944 371.5 222.5"></polygon>
+        <text id="text-•-text-•-text" font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="20" y="14">text • text • text</tspan>
+        </text>
+        <circle id="Oval" fill="#FFFFFF" cx="9.13149206" cy="14" r="4.5"></circle>
+        <circle id="Oval-Copy" fill="#FFFFFF" cx="733.594409" cy="14" r="4.5"></circle>
+        <text id="text-•-text-•-text-copy-3" font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="669.324219" y="14">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy-4" transform="translate(717.763140, 46.982741) rotate(-60.000000) translate(-717.763140, -46.982741) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="691.587358" y="49.4827414">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy-5" transform="translate(394.340490, 607.167203) rotate(-60.000000) translate(-394.340490, -607.167203) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="367.34049" y="609.667203">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy" transform="translate(25.577638, 47.482741) rotate(-300.000000) translate(-25.577638, -47.482741) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="-1.42236187" y="49.9827414">text • text • text</tspan>
+        </text>
+        <text id="text-•-text-•-text-copy-6" transform="translate(348.711613, 607.167203) rotate(-300.000000) translate(-348.711613, -607.167203) " font-family="ArialMT, Arial" font-size="8" font-weight="normal" fill="#FFFFFF">
+            <tspan x="322.535831" y="609.667203">text • text • text</tspan>
+        </text>
+        <circle id="Oval-Copy" fill="#FFFFFF" cx="371.5" cy="639.343619" r="4.5"></circle>
+    </g>
+</svg>
