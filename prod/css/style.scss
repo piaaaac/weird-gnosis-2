@@ -1,0 +1,284 @@
+
+@font-face {
+  font-family: Suisse Intl Mono;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/SuisseIntlMono/SuisseIntlMono-Regular.otf") format("opentype");
+}
+
+$green: #01FE92;
+$green-light: #7DFFC7;
+$bg-blackish: #000C0C;
+$font-mono: Suisse Intl Mono;
+$modal-padding: 100px;
+
+* { 
+  margin: 0; padding: 0; 
+  color: white;
+  font-family: $font-mono;
+}
+
+a:hover { 
+  color: inherit; 
+  cursor: url(../images/cursor-hover.png) 25 25, auto;
+}
+
+body {
+  background-color: black;
+  max-width: 100vw; max-height: 100vh;
+  overflow: hidden;
+  cursor: url(../images/cursor.png) 25 25, auto;
+}
+
+@keyframes rotorz {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+#cosmos {
+  // z-index: 1;
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  overflow: hidden;
+}
+
+#space {
+  perspective: 250px;
+
+  animation: rotorz 100s linear infinite;
+  background: transparent;
+  overflow: visible;
+  transition: perspective 15s;
+  display: flex; align-items: center; justify-content: center;
+  height: 100vh;
+  overflow: visible;
+  /* text-align: center; */
+}
+#room {
+  /* width: 1000px; height: 1000px; */
+  width: 80vmin; height: 80vmin;
+  display: flex; align-items: center; justify-content: center;
+  transform-style: preserve-3d;
+  /* transition: transform 4000ms; */
+}
+.face {
+  
+  /* width: 900px; height: 900px; */
+  height: 180vh; width: 30vmin;
+  height: 180vmin; width: 30vmin;
+
+  position: absolute;
+  backface-visibility: inherit;
+  font-size: 9px;
+  overflow-wrap: break-word;
+  color: #fff;
+  transition: color 900ms, transform 4000ms, background-image 1000ms;
+  transform-origin: center center;
+  background-image: url('../images/bg-kybalion.png');
+  background-size: contain;
+  background-repeat: repeat;
+
+  overflow-y: auto;
+  overflow: visible;
+}    
+.face span { padding: 0.3em 0; }
+.face:hover {
+  color: #0f0;
+}
+
+#face-01 { transform: rotateZ(calc(36deg*0)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-02 { transform: rotateZ(calc(36deg*1)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-03 { transform: rotateZ(calc(36deg*2)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-04 { transform: rotateZ(calc(36deg*3)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-05 { transform: rotateZ(calc(36deg*4)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-06 { transform: rotateZ(calc(36deg*5)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-07 { transform: rotateZ(calc(36deg*6)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-08 { transform: rotateZ(calc(36deg*7)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-09 { transform: rotateZ(calc(36deg*8)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+#face-10 { transform: rotateZ(calc(36deg*9)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+
+.preview {
+  z-index: 1;
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity 3s, transform 10s;
+
+  background-image: url(https://www.hisour.com/wp-content/uploads/2018/03/Postdigital-1280x720.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.hide {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+#ui {
+  z-index: 2;
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 3s;
+
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+
+    #numogram svg { 
+      height: 500vh; 
+      opacity: 0;
+    }
+  }
+
+  #top, #bottom {
+    position: absolute;
+    left: 0; right: 0;
+
+  }
+  #top {
+    top: 0;
+    padding: 0.3em 0.7em;
+  }
+  #bottom {
+    z-index: 1;
+    bottom: 10px;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0.3em 0.7em 0;
+    p { margin-bottom: 0; }
+  }
+}
+
+.mmodal {
+  z-index: 3;
+  transition: opacity 3s;
+
+  .mmodal-content, .mmodal-bg {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+  .mmodal-bg {
+    z-index: 3;
+    background-color: $bg-blackish;
+    transition: filter 300ms, top 600ms, bottom 600ms, left 600ms, right 600ms;
+  }
+  .mmodal-content {
+    z-index: 4;
+    // padding: $modal-padding;
+    color:  white;
+    overflow-y: scroll;
+  }
+
+  &.blurred {
+    .mmodal-bg {
+      filter:  blur(80px);
+      top: 30px; bottom: 30px; left: 30px; right: 30px;
+      // transform: scale(0.85);
+    }
+  }
+
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+#modal-work {
+  #top-ui {
+    z-index: 5;
+    position: absolute;
+    left: 0; right: 0;
+    top: 0;
+    padding: 0.3em 0.7em;
+  }
+}
+
+
+#numogram {
+  svg {
+    height: 80vh;
+    pointer-events: none;
+    transition: opacity 6s, height 6s;
+
+    * { pointer-events: none; }
+
+    g[id^="item"] {
+      pointer-events: auto;
+      * { pointer-events: auto; }
+
+      fill: rgba(0,0,0,0);
+      cursor: pointer;
+      
+      circle { transition: opacity 1s;; }
+      image { transition: filter 1s;; }
+      &:hover {
+        circle { opacity: 1 !important; }
+        image { filter: none !important; }
+      }
+    }
+
+    &:hover {
+      g[id^="item"] {
+        circle { opacity: 0.5; }
+        // image { filter: blur(3px); }
+      }
+    }
+  }
+}
+
+img.preload {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: none;
+}
+
+#opening {
+  text-align: center;
+  padding: 15vh 0;
+  height: 100vh;
+  display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;
+
+  #p5-morph {
+    // margin-left: -$modal-padding;
+    // margin-right: -$modal-padding;
+  }
+}
+
+#home-texts {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pointer { cursor: pointer; }
+.no-u { text-decoration: none; }
+
+main { display: none; }
+
+#modal-home .mmodal-bg {
+  background-color: transparent !important;
+}
+
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+.font-shiny {
+  color: $green !important;
+  text-shadow: 0px 0px 14px $green;
+}
+.font-soft { opacity: 0.7; }
+.font-white { color: white; }
+.font-green { color: $green; }
+
+.font-l { font-size: 1.5vw; }
+.font-m { font-size: 27px; }
+.font-s { font-size: 11px; }
+
+p.max {
+  max-width: 54em;
+}
+
