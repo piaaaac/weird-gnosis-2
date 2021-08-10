@@ -75,6 +75,7 @@ body {
   transition: color 900ms, transform 4000ms, background-image 1000ms;
   transform-origin: center center;
   background-image: url('../images/bg-kybalion.png');
+  background-image: url('../images/bg-kybalion.jpg');
   background-size: contain;
   background-repeat: repeat;
 
@@ -126,11 +127,10 @@ body {
   &.hide {
     opacity: 0;
     pointer-events: none;
+    
+    #numogram svg { opacity: 0; }
 
-    #numogram svg { 
-      height: 500vh; 
-      opacity: 0;
-    }
+    &.home #numogram svg { height: 400vh; }
   }
 
   #top, #bottom {
@@ -186,12 +186,16 @@ body {
 }
 
 #modal-work {
+  .mmodal-bg {
+    background-color: black;
+  }
   #top-ui {
     z-index: 5;
     position: absolute;
     left: 0; right: 0;
     top: 0;
     padding: 0.3em 0.7em;
+    background-color: black;
   }
 }
 
@@ -200,7 +204,8 @@ body {
   svg {
     height: 80vh;
     pointer-events: none;
-    transition: opacity 6s, height 6s;
+    transition: opacity 4s, height 4s;
+    transition: opacity 4s, height 6s cubic-bezier(0.22, 1, 0.36, 1);
 
     * { pointer-events: none; }
 
@@ -253,6 +258,11 @@ img.preload {
   margin-right: auto;
 }
 
+.grad-black-down {
+  background: linear-gradient(0, rgba(0,0,0,0.3), transparent);
+}
+.bg-black-transparent { background-color: rgba(0, 0, 0, 0.3);}
+
 .pointer { cursor: pointer; }
 .no-u { text-decoration: none; }
 
@@ -263,6 +273,42 @@ main { display: none; }
 }
 
 // -----------------------------------------------------------------------------
+// Work page
+// -----------------------------------------------------------------------------
+
+#work {
+  position: absolute;
+  left: 0; right: 0; 
+  top: 60px;
+  bottom: 0;
+  bottom: 60px;
+  background-color: black;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+// responsive embed via https://codepen.io/adrianparr/pen/GjayvV
+.embed-container {
+  position: relative;
+  // padding-bottom: 56.25%;
+  // height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  height: 100%;
+  max-height: 100%;
+  
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
 // Typography
 // -----------------------------------------------------------------------------
 
@@ -270,7 +316,7 @@ main { display: none; }
   color: $green !important;
   text-shadow: 0px 0px 14px $green;
 }
-.font-soft { opacity: 0.7; }
+.font-soft { opacity: 0.9; }
 .font-white { color: white; }
 .font-green { color: $green; }
 

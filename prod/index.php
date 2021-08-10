@@ -1,17 +1,9 @@
 <?php
-
-/* for SVG
-images/gif-1s/ezgif-2-e3507d25ccb9.gif
-images/gif-1s/ezgif-2-4cc8e65f6666.gif
-images/gif-1s/ezgif-2-7a9dfca7f5aa.gif
-images/gif-1s/ezgif-2-33c4be34d1b2.gif
-images/gif-1s/ezgif-2-36bb7d3c2c03.gif
-images/gif-1s/ezgif-2-50a767d3e5d0.gif
-images/gif-1s/ezgif-2-79ea82af1d22.gif
-images/gif-1s/ezgif-2-0404c435dcc1.gif
-images/gif-1s/ezgif-2-483aea8b630f.gif
-images/gif-1s/ezgif-2-b0facbce0e42.gif
-*/
+$url = "https://weirdgnosis.impakt.nl";
+$urlSocialImg = "/images/social-card.jpg";
+$siteTitle = "Weird Gnosis - IMPAKT";
+$title = "Weird Gnosis - IMPAKT";
+$desc = "Media, medicine and magick in a world out of control";
 
 $works = [
   [
@@ -79,10 +71,10 @@ $works = [
   ],
   [
     "title" => "(lecture)",
-    "author" => "Eric Davis ",
-    "slug" => "ericdavis",
+    "author" => "Erik Davis ",
+    "slug" => "erikdavis",
     "url" => null,
-    "previewUrl" => "images/works/ericdavis.jpg",
+    "previewUrl" => "images/works/erikdavis.jpg",
   ],
 ];
 
@@ -217,6 +209,17 @@ EOT;
   <link rel="stylesheet" href="lib/bootstrap-5.0.2.NOT_SURE_ITS_NEEDED.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="author" href="humans.txt">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155718720-9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-155718720-9');
+  </script>
+
 </head>
 <body>
   <div id="cosmos">
@@ -246,7 +249,7 @@ EOT;
 
   <!-- <div id="preview" class="hide"></div> -->
 
-  <div id="ui" class="hide">
+  <div id="ui" class="hide home">
     <div id="numogram"><?= $numogramSvg ?></div>
     <div id="top" class="font-m">
       <a onclick="openHome();" class="font-shiny pointer no-u">&</a>
@@ -294,7 +297,7 @@ EOT;
       <div id="home-texts">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 grad-black-down">
               <div class="curatorial-text">
                 <h2 class="font-s font-soft mb-4 pb-2">
                   Exhibition
@@ -303,9 +306,9 @@ EOT;
               </div>
             </div>
 
-            <div class="col-12 spacer py-5"></div>
+            <div class="col-12 bg-black-transparent spacer py-5"></div>
 
-            <div class="col-12 d-lg-none">
+            <div class="col-12 bg-black-transparent d-lg-none">
               <h2 class="font-s font-soft mb-4 pb-2">
                 About
               </h2>
@@ -317,7 +320,7 @@ EOT;
             </div>
 
 
-            <div class="col-lg-8">
+            <div class="col-lg-8 bg-black-transparent">
               <h2 class="font-s font-soft mb-4 pb-2">
                 Artists
               </h2>
@@ -328,7 +331,7 @@ EOT;
                   <br />Video, duration 16 min 45 sec
                 </p>
                 <p class="max mb-2">
-                  <br />The Grief Portal is a sci-fi inspired video that will bring you back into your body, through a healing ‘somatic movement’ that allows you to rebuild using ‘the compost of your grief’. The collective grief of the pandemic was what motivated Camille Barton to make the film. In their own words:
+                  The Grief Portal is a sci-fi inspired video that will bring you back into your body, through a healing ‘somatic movement’ that allows you to rebuild using ‘the compost of your grief’. The collective grief of the pandemic was what motivated Camille Barton to make the film. In their own words:
                 </p>
                 <p class="max mb-2">
                   In this moment, it is clear that we’ve got a lot to grieve about. We are facing unprecedented social, environmental and political challenges on a global scale. Against the backdrop of Covid-19, we are navigating individual grief, the loss of loved ones, the historical grief of colonisation, migration and displacement, environmental grief, and other forms of harm taking place on Earth. This is currently laid bare for all to see. Something needs to change. We must grieve for these systems and allow them to compost, so we can grow more beautiful futures from the fertile soil of our loss.
@@ -466,7 +469,7 @@ EOT;
                 </p>
               </div>
             </div>
-            <div class="col-lg-4 d-none d-lg-block">
+            <div class="col-lg-4 bg-black-transparent d-none d-lg-block">
               <h2 class="font-s font-soft mb-4 pb-2">
                 About
               </h2>
@@ -568,6 +571,7 @@ function closeWork (slug) {
   location.hash = "";
   soundtrack.play();
 
+  $("#modal-work .mmodal-content").empty();
   $("#modal-work").addClass("hide");
   $("#modal-home").addClass("hide");
   $(ui).removeClass("hide");
@@ -576,7 +580,7 @@ function closeWork (slug) {
 
 function closeHome () {
   $("#modal-home").addClass("hide");
-  $(ui).removeClass("hide");
+  $(ui).removeClass("hide").removeClass("home");
   perspMinimum();
   soundtrack.play();
   p5Sketch.noLoop();
@@ -584,7 +588,7 @@ function closeHome () {
 
 function openHome () {
   $("#modal-home").removeClass("hide");
-  $(ui).addClass("hide");
+  $(ui).addClass("hide").addClass("home");
   perspIncrease();
   p5Sketch.loop();
 }

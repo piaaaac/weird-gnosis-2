@@ -6,6 +6,7 @@ var p5Sketch = new p5(function (p) {
   let fontSize;
   let letters = {};
   let w, ww;
+  let distorsion = p.createVector(0,0);
 
   var wordTitle, singleLetter;
 
@@ -32,6 +33,7 @@ var p5Sketch = new p5(function (p) {
     p.noFill();
     p.stroke(0, 255, 147);
     p.strokeWeight(0.5);
+    p.strokeWeight(1);
 
     // --- SuisseIntlMono-Regular.otf --------------------------------------------
     fontSize = 200;
@@ -163,6 +165,15 @@ var p5Sketch = new p5(function (p) {
     w = new MorphWord(ww.getSetupLetters(), ww.words);
     w.setup();
     w.morphAll(); 
+  }
+
+  p.mouseMoved = function () {
+    var v = p.createVector(p.mouseX - p.pmouseX, p.mouseY - p.pmouseY);
+    // distorsion
+    p.push();
+    p.stroke(255);
+    p.line(p.width/2,p.height/2, p.width/2+v.x,p.height/2+v.y);
+    p.pop();
   }
 
   // p.keyPressed = function () {
@@ -367,10 +378,9 @@ var p5Sketch = new p5(function (p) {
       p.fill(0, 10);
       p.noStroke();
 
-      // p.rect(0, 0, p.width, p.height);
-      // p.erase(100, 100);
-      // p.erase();
-      // p.noErase();
+      p.erase(8, 8);
+      p.rect(0, 0, p.width, p.height);
+      p.noErase();
 
       var that = this;
       this.items.forEach(function (item) {
