@@ -1,4 +1,5 @@
 <div id="work">
-  <p>Ciao!</p>
-  <p>Ciao!</p>
+  <div class='embed-container'>
+    <iframe src='works/joshuacitarella' frameborder='0'></iframe>
+  </div>
 </div>

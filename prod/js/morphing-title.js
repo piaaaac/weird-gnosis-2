@@ -6,7 +6,16 @@ var p5Sketch = new p5(function (p) {
   let fontSize;
   let letters = {};
   let w, ww;
+  
+  // v1
+  let movement = p.createVector(0,0);
   let distorsion = p.createVector(0,0);
+  let noiseI = 0;
+  
+  // v2
+  // let distorsionAmount = 0;
+  // let distorsionEasing = 0.5;
+  // let noiseCounter = 0;
 
   var wordTitle, singleLetter;
 
@@ -24,7 +33,7 @@ var p5Sketch = new p5(function (p) {
     // var cont = document.getElementById("opening");
     var cont = document.getElementById("p5-morph");
     var cw = cont.offsetWidth;
-    var ch = cw * 0.25;
+    var ch = cw * 0.5;
     var canvas = p.createCanvas(cw, ch);
 
     canvas.parent("p5-morph");
@@ -135,27 +144,15 @@ var p5Sketch = new p5(function (p) {
     // drawCursor();
     w.update();
     w.display();
-  }
 
-  p.morphiesSmall = function () {
-    p.clear();
-    w.items.forEach(function (item) {
-      // item.setParameters({y: p.height + p.width/22 - 35});
-      item.setParameters({y: p.height + p.width/16 - 35});
-    });
-  }
-  p.morphiesLarge = function () {
-    p.clear();
-    w.items.forEach(function (item) {
-      item.resetParameters();
-    });
+    updateDistorsion();
   }
 
   p.windowResized = function () {
 
     var cont = document.getElementById("p5-morph");
     var cw = cont.offsetWidth;
-    var ch = cw * 0.25;
+    var ch = cw * 0.5;
     p.resizeCanvas(cw, ch);
     p.clear();
     // p.background(0, 13,13);
@@ -168,12 +165,15 @@ var p5Sketch = new p5(function (p) {
   }
 
   p.mouseMoved = function () {
-    var v = p.createVector(p.mouseX - p.pmouseX, p.mouseY - p.pmouseY);
-    // distorsion
-    p.push();
-    p.stroke(255);
-    p.line(p.width/2,p.height/2, p.width/2+v.x,p.height/2+v.y);
-    p.pop();
+    // v1
+    movement = p.createVector(p.mouseX - p.pmouseX, p.mouseY - p.pmouseY);
+    // p.push();
+    // p.stroke(255);
+    // p.line(p.width/2,p.height/2, p.width/2+distorsion.x,p.height/2+distorsion.y);
+    // p.pop();
+    
+    // v2
+    // distorsionAmount += movement.mag() * distorsionEasing;
   }
 
   // p.keyPressed = function () {
@@ -183,6 +183,28 @@ var p5Sketch = new p5(function (p) {
   //     else p.loop();
   //   }
   // }
+
+  // ---------------------------------------------------------------------------
+  // Functions
+  // ---------------------------------------------------------------------------
+
+  function updateDistorsion () {
+    // v1
+    movement.x = p.round(movement.x * 0.9);
+    movement.y = p.round(movement.y * 0.9);
+    // console.log(movement.x, movement.y);
+    var delta = p5.Vector.sub(movement, distorsion);
+    distorsion.x += delta.x * 0.05;
+    distorsion.y += delta.y * 0.05;
+    distorsion.x *= 0.99;
+    distorsion.y *= 0.99;
+    // console.log(distorsion.x, distorsion.y);
+
+    // v2
+    // distorsionAmount = distorsionAmount - distorsionAmount * 0.1;
+    // if (distorsionAmount < 1) { distorsionAmount = 0; }
+    // console.log(distorsionAmount);
+  }
 
 
   // ---------------------------------------------------------------------------
@@ -207,6 +229,7 @@ var p5Sketch = new p5(function (p) {
     this.yCurr = y;
     this.completeness = 0.8;
     this.completeness = 1;
+    this.distorsionNoiseI = 0;
 
 
     this.init = function () {
@@ -251,6 +274,41 @@ var p5Sketch = new p5(function (p) {
             var v1 = p.createVector(this.letterFrom[i].x, this.letterFrom[i].y);
             var v2 = p.createVector(this.letterTo[i].x, this.letterTo[i].y);
             var v = p5.Vector.lerp(v1, v2, lifeEased);
+
+            // add distorsion v1
+            if (distorsion) {
+
+              // v1
+              // var factor = 2.5;
+              // v.add(distorsion.x * p.noise(i/10, frameCount/50)*factor, distorsion.y * p.noise(i/10, frameCount/50)*factor);
+              
+              // v2
+              var factorNoise = 1.0;
+              var factorDirection = 0.5;
+              var moveX = (distorsion.x * p.noise(i/10, frameCount/50) * factorDirection) + (distorsion.x * (p.noise(i/10, frameCount/50) - 0.5) * factorNoise);
+              var moveY = (distorsion.y * p.noise(i/10, frameCount/50) * factorDirection) + (distorsion.y * (p.noise(i/10, frameCount/50) - 0.5) * factorNoise);
+              v.add(moveX, moveY);
+
+              // v3
+              // var factorNoise = 1.0;
+              // var factorDirection = 0.5;
+              // var tmpX = p.map(distorsion.x, -p.width/100, p.width/100, 0,1, true);
+              // var tmpY = p.map(distorsion.y, -p.width/100, p.width/100, 0,1, true);
+              // var dstrX = easeOutCubic(tmpX) * p.width/100;
+              // var dstrY = easeOutCubic(tmpY) * p.width/100;
+              // var moveX = (dstrX * p.noise(i/10, frameCount/50) * factorDirection) + (dstrX * (p.noise(i/10, frameCount/50) - 0.5) * factorNoise);
+              // var moveY = (dstrY * p.noise(i/10, frameCount/50) * factorDirection) + (dstrY * (p.noise(i/10, frameCount/50) - 0.5) * factorNoise);
+              // v.add(moveX, moveY);
+            }
+
+            // distorion v2
+            // if (distorsionAmount) {
+            //   var factor = 0.5;
+            //   var noiseNow = noiseCounter + i/10;
+            //   console.log(noiseNow)
+            //   v.add(distorsionAmount * (p.noise(frameCount * 0.01, noiseNow) - 0.5) * factor, distorsionAmount * (p.noise(frameCount * 0.01, noiseNow) - 0.5) * factor);
+            // }
+
             this.letterCurr[i].x = v.x;
             this.letterCurr[i].y = v.y;
           }
@@ -284,6 +342,9 @@ var p5Sketch = new p5(function (p) {
           // ---------------------------------------------------------------------
 
         }
+        // noiseCounter += noiseNow;
+        // this.distorsionNoiseI += this.letterCurr.length/10;
+        // console.log(this.distorsionNoiseI)
       }
     }
 
@@ -418,13 +479,6 @@ var p5Sketch = new p5(function (p) {
 
 
   // ---------------------------------------------------------------------------
-  // MorphLetter class
-  // ---------------------------------------------------------------------------
-
-  // function drawCursor () {
-  // }
-
-  // ---------------------------------------------------------------------------
   // Utilities
   // ---------------------------------------------------------------------------
 
@@ -440,7 +494,6 @@ var p5Sketch = new p5(function (p) {
     return -(p.cos(p.PI * x) - 1) / 2;
   }
 
-
   function easeInOutBack (x) {
     const c1 = 1.70158;
     const c2 = c1 * 1.525;
@@ -448,4 +501,9 @@ var p5Sketch = new p5(function (p) {
       ? (p.pow(2 * x, 2) * ((c2 + 1) * 2 * x - c2)) / 2
       : (p.pow(2 * x - 2, 2) * ((c2 + 1) * (x * 2 - 2) + c2) + 2) / 2;
   }
+
+  function easeOutCubic (x) {
+    return 1 - pow(1 - x, 3);
+  }
+
 });

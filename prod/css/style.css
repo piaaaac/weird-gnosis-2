@@ -20,11 +20,21 @@ body {
   overflow: hidden;
   cursor: url(../images/cursor.png) 25 25, auto; }
 
+@-webkit-keyframes rotorz {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg); } }
+
 @keyframes rotorz {
   0% {
-    transform: rotateZ(0deg); }
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg); }
   100% {
-    transform: rotateZ(360deg); } }
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg); } }
 #cosmos {
   position: fixed;
   top: 0;
@@ -34,14 +44,25 @@ body {
   overflow: hidden; }
 
 #space {
-  perspective: 250px;
-  animation: rotorz 100s linear infinite;
+  -webkit-perspective: 250px;
+          perspective: 250px;
+  -webkit-animation: rotorz 100s linear infinite;
+          animation: rotorz 100s linear infinite;
   background: transparent;
   overflow: visible;
+  -webkit-transition: -webkit-perspective 15s;
+  transition: -webkit-perspective 15s;
   transition: perspective 15s;
+  transition: perspective 15s, -webkit-perspective 15s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
   overflow: visible;
   /* text-align: center; */ }
@@ -50,10 +71,17 @@ body {
   /* width: 1000px; height: 1000px; */
   width: 80vmin;
   height: 80vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   /* transition: transform 4000ms; */ }
 
 .face {
@@ -63,12 +91,17 @@ body {
   height: 180vmin;
   width: 30vmin;
   position: absolute;
-  backface-visibility: inherit;
+  -webkit-backface-visibility: inherit;
+          backface-visibility: inherit;
   font-size: 9px;
   overflow-wrap: break-word;
   color: #fff;
+  -webkit-transition: color 900ms, background-image 1000ms, -webkit-transform 4000ms;
+  transition: color 900ms, background-image 1000ms, -webkit-transform 4000ms;
   transition: color 900ms, transform 4000ms, background-image 1000ms;
-  transform-origin: center center;
+  transition: color 900ms, transform 4000ms, background-image 1000ms, -webkit-transform 4000ms;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
   background-image: url("../images/bg-kybalion.png");
   background-image: url("../images/bg-kybalion.jpg");
   background-size: contain;
@@ -83,34 +116,44 @@ body {
   color: #0f0; }
 
 #face-01 {
-  transform: rotateZ(calc(36deg*0)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*0)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*0)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-02 {
-  transform: rotateZ(calc(36deg*1)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*1)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*1)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-03 {
-  transform: rotateZ(calc(36deg*2)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*2)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*2)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-04 {
-  transform: rotateZ(calc(36deg*3)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*3)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*3)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-05 {
-  transform: rotateZ(calc(36deg*4)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*4)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*4)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-06 {
-  transform: rotateZ(calc(36deg*5)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*5)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*5)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-07 {
-  transform: rotateZ(calc(36deg*6)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*6)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*6)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-08 {
-  transform: rotateZ(calc(36deg*7)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*7)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*7)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-09 {
-  transform: rotateZ(calc(36deg*8)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*8)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*8)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 #face-10 {
-  transform: rotateZ(calc(36deg*9)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
+  -webkit-transform: rotateZ(calc(36deg*9)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1);
+          transform: rotateZ(calc(36deg*9)) rotateX(90deg) translateZ(calc(30vmin*1.52)) scaleX(-1); }
 
 .preview {
   z-index: 1;
@@ -121,14 +164,18 @@ body {
   right: 0;
   opacity: 0.2;
   pointer-events: none;
+  -webkit-transition: opacity 3s, -webkit-transform 10s;
+  transition: opacity 3s, -webkit-transform 10s;
   transition: opacity 3s, transform 10s;
+  transition: opacity 3s, transform 10s, -webkit-transform 10s;
   background-image: url(https://www.hisour.com/wp-content/uploads/2018/03/Postdigital-1280x720.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }
   .preview.hide {
     opacity: 0;
-    transform: scale(1.3); }
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3); }
 
 #ui {
   z-index: 2;
@@ -137,9 +184,16 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: opacity 3s;
   transition: opacity 3s; }
   #ui.hide {
     opacity: 0;
@@ -154,19 +208,35 @@ body {
     right: 0; }
   #ui #top {
     top: 0;
-    padding: 0.3em 0.7em; }
+    padding: 0.3em 0.7em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   #ui #bottom {
     z-index: 1;
     bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 0.3em 0.7em 0; }
     #ui #bottom p {
       margin-bottom: 0; }
 
 .mmodal {
   z-index: 3;
+  -webkit-transition: opacity 3s;
   transition: opacity 3s; }
   .mmodal .mmodal-content, .mmodal .mmodal-bg {
     position: fixed;
@@ -177,13 +247,17 @@ body {
   .mmodal .mmodal-bg {
     z-index: 3;
     background-color: #000C0C;
-    transition: filter 300ms, top 600ms, bottom 600ms, left 600ms, right 600ms; }
+    -webkit-transition: top 600ms, bottom 600ms, left 600ms, right 600ms, -webkit-filter 300ms;
+    transition: top 600ms, bottom 600ms, left 600ms, right 600ms, -webkit-filter 300ms;
+    transition: filter 300ms, top 600ms, bottom 600ms, left 600ms, right 600ms;
+    transition: filter 300ms, top 600ms, bottom 600ms, left 600ms, right 600ms, -webkit-filter 300ms; }
   .mmodal .mmodal-content {
     z-index: 4;
     color: white;
     overflow-y: scroll; }
   .mmodal.blurred .mmodal-bg {
-    filter: blur(80px);
+    -webkit-filter: blur(80px);
+            filter: blur(80px);
     top: 30px;
     bottom: 30px;
     left: 30px;
@@ -206,7 +280,9 @@ body {
 #numogram svg {
   height: 80vh;
   pointer-events: none;
+  -webkit-transition: opacity 4s, height 4s;
   transition: opacity 4s, height 4s;
+  -webkit-transition: opacity 4s, height 6s cubic-bezier(0.22, 1, 0.36, 1);
   transition: opacity 4s, height 6s cubic-bezier(0.22, 1, 0.36, 1); }
   #numogram svg * {
     pointer-events: none; }
@@ -217,13 +293,18 @@ body {
     #numogram svg g[id^="item"] * {
       pointer-events: auto; }
     #numogram svg g[id^="item"] circle {
+      -webkit-transition: opacity 1s;
       transition: opacity 1s; }
     #numogram svg g[id^="item"] image {
-      transition: filter 1s; }
+      -webkit-transition: -webkit-filter 1s;
+      transition: -webkit-filter 1s;
+      transition: filter 1s;
+      transition: filter 1s, -webkit-filter 1s; }
     #numogram svg g[id^="item"]:hover circle {
       opacity: 1 !important; }
     #numogram svg g[id^="item"]:hover image {
-      filter: none !important; }
+      -webkit-filter: none !important;
+              filter: none !important; }
   #numogram svg:hover g[id^="item"] circle {
     opacity: 0.5; }
 
@@ -237,17 +318,29 @@ img.preload {
   text-align: center;
   padding: 15vh 0;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  #opening #p5-morph {
+    margin: -12.5% 0; }
 
-#home-texts {
+.max-w {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto; }
 
 .grad-black-down {
+  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(rgba(0, 0, 0, 0.3)), to(transparent));
   background: linear-gradient(0, rgba(0, 0, 0, 0.3), transparent); }
 
 .bg-black-transparent {
@@ -288,6 +381,15 @@ main {
     left: 0;
     width: 100%;
     height: 100%; }
+
+iframe#suzanne {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%; }
 
 .font-shiny {
   color: #01FE92 !important;
