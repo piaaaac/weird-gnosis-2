@@ -9,6 +9,7 @@
 $green: #01FE92;
 $green-light: #7DFFC7;
 $bg-blackish: #000C0C;
+$bg-blackish: #000202;
 $font-mono: Suisse Intl Mono;
 $modal-padding: 100px;
 
@@ -16,15 +17,17 @@ $modal-padding: 100px;
   margin: 0; padding: 0; 
   color: white;
   font-family: $font-mono;
+  cursor: url(../images/cursor.png) 25 25, auto;
 }
 
 a:hover { 
   color: inherit; 
-  cursor: url(../images/cursor-hover.png) 25 25, auto;
+  cursor: url(../images/cursor-hover.png) 25 25, auto !important;
 }
 
 body {
   background-color: black;
+  // background-color: $bg-blackish;
   max-width: 100vw; max-height: 100vh;
   overflow: hidden;
   cursor: url(../images/cursor.png) 25 25, auto;
@@ -162,7 +165,8 @@ body {
   }
   .mmodal-bg {
     z-index: 3;
-    background-color: $bg-blackish;
+    // background-color: $bg-blackish;
+    background-color: black;
     transition: filter 300ms, top 600ms, bottom 600ms, left 600ms, right 600ms;
   }
   .mmodal-content {
@@ -215,10 +219,11 @@ body {
       * { pointer-events: auto; }
 
       fill: rgba(0,0,0,0);
-      cursor: pointer;
+      cursor: url(../images/cursor-hover.png) 25 25, auto;
       
       circle { transition: opacity 1s;; }
       image { transition: filter 1s;; }
+      cursor: url(../images/cursor-hover.png) 25 25, auto;
       &:hover {
         circle { opacity: 1 !important; }
         image { filter: none !important; }
@@ -228,7 +233,7 @@ body {
     &:hover {
       g[id^="item"] {
         circle { opacity: 0.5; }
-        // image { filter: blur(3px); }
+        cursor: url(../images/cursor-hover.png) 25 25, auto;
       }
     }
   }
@@ -266,7 +271,7 @@ img.preload {
 }
 .bg-black-transparent { background-color: rgba(0, 0, 0, 0.3);}
 
-.pointer { cursor: pointer; }
+.pointer { cursor: url(../images/cursor-hover.png) 25 25, auto; }
 .no-u { text-decoration: none; }
 
 main { display: none; }
@@ -274,6 +279,38 @@ main { display: none; }
 #modal-home .mmodal-bg {
   background-color: transparent !important;
 }
+
+@media only screen and (max-width: 425px) {
+  #ui #bottom {
+    pointer-events: none;
+    .btn-mob {
+      opacity: 1;
+      pointer-events: all;
+      &.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+img.logos {
+  opacity: 0.7;
+  width: 100%;
+  max-width: 400px;
+}
+
+// -----------------------------------------------------------------------------
+// Utilities
+// -----------------------------------------------------------------------------
+
+.cursor-hover { cursor: url(../images/cursor-hover.png) 25 25, auto !important; }
+
+.lh-l { line-height: 2.8em; }
+
+.opacity-0 { opacity: 0; }
+
+
 
 // -----------------------------------------------------------------------------
 // Work page
@@ -283,7 +320,6 @@ main { display: none; }
   position: absolute;
   left: 0; right: 0; 
   top: 60px;
-  bottom: 0;
   bottom: 60px;
   background-color: black;
   overflow-y: scroll;
@@ -311,10 +347,24 @@ main { display: none; }
 }
 
 iframe#suzanne {
-  position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+  position: fixed; top: 0; bottom: 0; left: 0; right: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
+
+#work-ui-bottom {
+  position: fixed;
+  left: 0; bottom: 0; right: 0; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 30px;
+}
+
 
 // -----------------------------------------------------------------------------
 // Typography
@@ -329,7 +379,10 @@ iframe#suzanne {
 .font-green { color: $green; }
 
 .font-l { font-size: 1.5vw; }
-.font-m { font-size: 27px; }
+.font-m { 
+  font-size: 27px; 
+  @media only screen and (max-width: 425px) { font-size: 22px; } 
+}
 .font-s { font-size: 11px; }
 
 p.max {

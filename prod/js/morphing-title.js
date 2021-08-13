@@ -39,10 +39,11 @@ var p5Sketch = new p5(function (p) {
     canvas.parent("p5-morph");
 
     // p.background(0, 13,13);
+    p.frameRate(30);
     p.noFill();
-    p.stroke(0, 255, 147);
-    p.strokeWeight(0.5);
-    p.strokeWeight(1);
+    // p.stroke(0, 255, 147);
+    // p.strokeWeight(0.5);
+    // p.strokeWeight(1);
 
     // --- SuisseIntlMono-Regular.otf --------------------------------------------
     fontSize = 200;
@@ -229,6 +230,7 @@ var p5Sketch = new p5(function (p) {
     this.yCurr = y;
     this.completeness = 0.8;
     this.completeness = 1;
+    this.cycles = 0;
     this.distorsionNoiseI = 0;
 
 
@@ -283,11 +285,16 @@ var p5Sketch = new p5(function (p) {
               // v.add(distorsion.x * p.noise(i/10, frameCount/50)*factor, distorsion.y * p.noise(i/10, frameCount/50)*factor);
               
               // v2
-              var factorNoise = 1.0;
-              var factorDirection = 0.5;
-              var moveX = (distorsion.x * p.noise(i/10, frameCount/50) * factorDirection) + (distorsion.x * (p.noise(i/10, frameCount/50) - 0.5) * factorNoise);
-              var moveY = (distorsion.y * p.noise(i/10, frameCount/50) * factorDirection) + (distorsion.y * (p.noise(i/10, frameCount/50) - 0.5) * factorNoise);
-              v.add(moveX, moveY);
+              var factorNoise = 0.5;
+              var factorDirection = 1.5;
+              var moveX = (distorsion.x * p.noise(this.cycles/50, i/10, frameCount/50) * factorDirection) + (distorsion.x * (p.noise(this.cycles/50, i/10, frameCount/50) - 0.5) * factorNoise);
+              var moveY = (distorsion.y * p.noise(this.cycles/50, i/10, frameCount/50) * factorDirection) + (distorsion.y * (p.noise(this.cycles/50, i/10, frameCount/50) - 0.5) * factorNoise);
+              v.add(p.constrain(moveX, -10, 10), p.constrain(moveY, -10, 10));
+
+              // glitch
+              // if (p.random() < 0.001) {
+              //   v.add((p.random() - 0.5) * 10, 0);
+              // }
 
               // v3
               // var factorNoise = 1.0;
@@ -345,6 +352,8 @@ var p5Sketch = new p5(function (p) {
         // noiseCounter += noiseNow;
         // this.distorsionNoiseI += this.letterCurr.length/10;
         // console.log(this.distorsionNoiseI)
+        this.cycles++;
+        // console.log(this.cycles);
       }
     }
 
@@ -372,7 +381,10 @@ var p5Sketch = new p5(function (p) {
       // }
       // p.endShape(p.CLOSE);
       p.stroke(0, 255, 147);
-      p.strokeWeight(0.5);
+      // p.strokeWeight(0.5);
+      p.strokeWeight(1);
+      // p.strokeWeight(2);
+      // p.strokeWeight(1.5);
       p.beginShape();
       for (let i = 0; i < this.letterCurr.length; i++) {
         p.vertex(this.letterCurr[i].x * scale, this.letterCurr[i].y * scale);
@@ -439,7 +451,9 @@ var p5Sketch = new p5(function (p) {
       p.fill(0, 10);
       p.noStroke();
 
-      p.erase(8, 8);
+      // p.erase(8);
+      p.erase(20);
+      // p.erase(50);
       p.rect(0, 0, p.width, p.height);
       p.noErase();
 

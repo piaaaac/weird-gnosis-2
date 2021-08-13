@@ -8,6 +8,7 @@ var p5Sketch = new p5(function (p) {
   let w, ww;
 
   var wordTitle, singleLetter;
+  var letterSize = 30;
 
   p.preload = function () {
     var f4 = "fonts/SuisseIntlMono/SuisseIntlMono-Regular.otf";
@@ -18,11 +19,11 @@ var p5Sketch = new p5(function (p) {
   }
 
   p.setup = function () {
-    var canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+    var canvas = p.createCanvas(900, letterSize * 2);
     canvas.parent("p5-sketch");
 
-    p.background(0, 0,0);
-    p.background(0, 13,13);
+    // p.background(0, 0,0);
+    // p.background(0, 13,13);
 
     // v1 - ori
     // p.noFill();
@@ -87,24 +88,31 @@ var p5Sketch = new p5(function (p) {
 
     // V.C
 
-    var size = 30;
     var margin = 50;
     wordTitle = {
       setupLetters: [
-        {"letter": "W4", "left": 100+size*0 + margin*0, "top": p.height/2+size/2, "size": size},
-        {"letter": "E4", "left": 100+size*1 + margin*1, "top": p.height/2+size/2, "size": size},
-        {"letter": "I4", "left": 100+size*2 + margin*2, "top": p.height/2+size/2, "size": size},
-        {"letter": "R4", "left": 100+size*3 + margin*3, "top": p.height/2+size/2, "size": size},
-        {"letter": "D4", "left": 100+size*4 + margin*4, "top": p.height/2+size/2, "size": size},
-        {"letter": "D4", "left": 100+size*5 + margin*5, "top": p.height/2+size/2, "size": size},
+        {"letter": "×4", "left": 100+letterSize*0 + margin*0, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "O4", "left": 100+letterSize*1 + margin*1, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "∑4", "left": 100+letterSize*2 + margin*2, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "+4", "left": 100+letterSize*3 + margin*3, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "]4", "left": 100+letterSize*4 + margin*4, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "⁄4", "left": 100+letterSize*5 + margin*5, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "+4", "left": 100+letterSize*6 + margin*6, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "&4", "left": 100+letterSize*7 + margin*7, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "S4", "left": 100+letterSize*8 + margin*8, "top": letterSize*1.5, "size": letterSize},
+        {"letter": "74", "left": 100+letterSize*9 + margin*9, "top": letterSize*1.5, "size": letterSize},
       ],
       words: [
 
-        ["ø4", "∑4", "∫4", "≠4", "]4", "+4"],
-        ["*4", "‡4", "Æ4", "æ4", "~4", "&4"],
-        ["14", "24", "34", "44", "54", "64"],
-        ["74", "84", "94", "04", "×4", "⁄4"],
-        ["†4", "@4", "{4", "<4", "]4", "+4"],
+        ["S4", "@4", "E4", "×4", "~4", "+4", "24", "×4", "∫4", "†4"],
+        ["∫4", "&4", "+4", "~4", "O4", "W4", "S4", "]4", "54", "+4"],
+        ["×4", "O4", "∑4", "+4", "]4", "⁄4", "+4", "&4", "S4", "74"],
+
+        // ["*4", "‡4", "Æ4", "æ4", "~4", "&4"],
+        // ["†4", "@4", "{4", "<4", "]4", "+4"],
+        // ["ø4", "∑4", "∫4", "≠4", "]4", "+4"],
+        // ["14", "24", "34", "44", "54", "64"],
+        // ["74", "84", "94", "04", "×4", "⁄4"],
         
         // ["G4","N4","O4","S4","I4","S4"],
         // ["W4","W4","E4","I4","R4","D4"],
@@ -136,6 +144,39 @@ var p5Sketch = new p5(function (p) {
     w = new MorphWord(ww.setupLetters, ww.words);
     w.setup();
     w.morphAll(); 
+
+    p.createLoop({
+      "duration": 6,
+      "framesPerSecond": 45,
+      "gif": {
+
+        "render": true,           // true - render the GIF image alongside the sketch. Clicking on the image will begin downloading the GIF
+        "open": true,             // false - open the gif image in a new tab or window
+        "download": true,         // false - download the gif automatically
+        "fileName": "morph.gif",  // "image.gif - name of the downloaded GIF file
+        "startLoop": 0,           // 0 - loop index to begin recording the GIF
+        "endLoop": 1,             // 1 - loop index to end recording the GIF
+        "canvas": canvas,         // canvas - the canvas to render. By default this is the sketch canvas
+        "options": {
+
+          /*
+          "repeat": 0,                      // 0        repeat count, -1 = no repeat, 0 = forever
+          "quality": 10,                    // 10       pixel sample interval, lower is better
+          "workers": 2,                     // 2        number of web workers to spawn
+          "workerScript": "gif.worker.js",  //          url to load worker script from
+          "background": "#fff",             // fff      background color where source image is transparent
+          "width": null,                    // null     output image width
+          "height": null,                   // null     output image height
+          "transparent": null,              // null     transparent hex color, 0x00FF00 = green
+          "dither": false,                  // false    dithering method, e.g. FloydSteinberg-serpentine
+          "debug": false,                   // false    whether to print debug information to console
+          */
+          "background": "grba(0,0,0,0)",
+
+        },
+      }
+    });
+
   }
 
   p.draw = function () {
@@ -219,8 +260,7 @@ var p5Sketch = new p5(function (p) {
           // V1 - LINEAR
           // ---------------------------------------------------------------------
           
-          var inc = 0.000045; // SENTENCE
-          // var inc = 0.00008; // LETTER
+          var inc = 0.00008;
 
           this.life += inc;
           if (this.life <= 1) {
@@ -311,8 +351,12 @@ var p5Sketch = new p5(function (p) {
 
     this.update = function () {
 
-      p.fill(0, 10);
+      // p.erase(8, 8);
+      // p.erase(18, 18);
+      p.erase(255, 255);
       p.rect(0, 0, p.width, p.height);
+      p.noErase();
+
   
       // v1 - ori
   

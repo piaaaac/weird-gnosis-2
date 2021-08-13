@@ -7,11 +7,12 @@
   margin: 0;
   padding: 0;
   color: white;
-  font-family: Suisse Intl Mono; }
+  font-family: Suisse Intl Mono;
+  cursor: url(../images/cursor.png) 25 25, auto; }
 
 a:hover {
   color: inherit;
-  cursor: url(../images/cursor-hover.png) 25 25, auto; }
+  cursor: url(../images/cursor-hover.png) 25 25, auto !important; }
 
 body {
   background-color: black;
@@ -246,7 +247,7 @@ body {
     right: 0; }
   .mmodal .mmodal-bg {
     z-index: 3;
-    background-color: #000C0C;
+    background-color: black;
     -webkit-transition: top 600ms, bottom 600ms, left 600ms, right 600ms, -webkit-filter 300ms;
     transition: top 600ms, bottom 600ms, left 600ms, right 600ms, -webkit-filter 300ms;
     transition: filter 300ms, top 600ms, bottom 600ms, left 600ms, right 600ms;
@@ -289,7 +290,8 @@ body {
   #numogram svg g[id^="item"] {
     pointer-events: auto;
     fill: rgba(0, 0, 0, 0);
-    cursor: pointer; }
+    cursor: url(../images/cursor-hover.png) 25 25, auto;
+    cursor: url(../images/cursor-hover.png) 25 25, auto; }
     #numogram svg g[id^="item"] * {
       pointer-events: auto; }
     #numogram svg g[id^="item"] circle {
@@ -305,8 +307,10 @@ body {
     #numogram svg g[id^="item"]:hover image {
       -webkit-filter: none !important;
               filter: none !important; }
-  #numogram svg:hover g[id^="item"] circle {
-    opacity: 0.5; }
+  #numogram svg:hover g[id^="item"] {
+    cursor: url(../images/cursor-hover.png) 25 25, auto; }
+    #numogram svg:hover g[id^="item"] circle {
+      opacity: 0.5; }
 
 img.preload {
   width: 0;
@@ -347,7 +351,7 @@ img.preload {
   background-color: rgba(0, 0, 0, 0.3); }
 
 .pointer {
-  cursor: pointer; }
+  cursor: url(../images/cursor-hover.png) 25 25, auto; }
 
 .no-u {
   text-decoration: none; }
@@ -358,12 +362,34 @@ main {
 #modal-home .mmodal-bg {
   background-color: transparent !important; }
 
+@media only screen and (max-width: 425px) {
+  #ui #bottom {
+    pointer-events: none; }
+    #ui #bottom .btn-mob {
+      opacity: 1;
+      pointer-events: all; }
+      #ui #bottom .btn-mob.hide {
+        opacity: 0;
+        pointer-events: none; } }
+img.logos {
+  opacity: 0.7;
+  width: 100%;
+  max-width: 400px; }
+
+.cursor-hover {
+  cursor: url(../images/cursor-hover.png) 25 25, auto !important; }
+
+.lh-l {
+  line-height: 2.8em; }
+
+.opacity-0 {
+  opacity: 0; }
+
 #work {
   position: absolute;
   left: 0;
   right: 0;
   top: 60px;
-  bottom: 0;
   bottom: 60px;
   background-color: black;
   overflow-y: scroll;
@@ -383,13 +409,35 @@ main {
     height: 100%; }
 
 iframe#suzanne {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  opacity: 0;
+  pointer-events: none; }
+  iframe#suzanne.active {
+    opacity: 1;
+    pointer-events: auto; }
+
+#work-ui-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px; }
 
 .font-shiny {
   color: #01FE92 !important;
@@ -409,6 +457,9 @@ iframe#suzanne {
 
 .font-m {
   font-size: 27px; }
+  @media only screen and (max-width: 425px) {
+    .font-m {
+      font-size: 22px; } }
 
 .font-s {
   font-size: 11px; }

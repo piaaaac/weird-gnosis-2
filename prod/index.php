@@ -1,4 +1,6 @@
 <?php
+// require "config.php"; // not needed anymore (joshua citarella)
+
 $url = "https://weirdgnosis.impakt.nl";
 $urlSocialImg = "/images/social-card.jpg";
 $siteTitle = "Weird Gnosis - IMPAKT";
@@ -7,10 +9,10 @@ $desc = "Media, medicine and magick in a world out of control";
 
 $works = [
   [
-    "title" => "Technoshamanic Systems",
+    "title" => "TECHNOSHAMANIC SYSTEMS: New Cosmological Models for Survival",
     "author" => "Suzanne Treister",
     "slug" => "suzannetreister",
-    "url" => "http://www.suzannetreister.net/TechnoShamanicSystems/TSS/TSS_M.html",
+    "url" => "https://www.suzannetreister.net/TechnoShamanicSystems/TSS/TSS_M.html",
     "previewUrl" => "images/works/suzannetreister.jpg",
   ],
   [
@@ -29,10 +31,10 @@ $works = [
   ],
   [
     "title" => "Sisters of the Wind",
-    "author" => "jujul0v3",
-    "slug" => "jujul0v3",
+    "author" => "Juliette Lizotte",
+    "slug" => "juliettelizotte",
     "url" => "https://jujulove.eu/welcome.html",
-    "previewUrl" => "images/works/jujul0v3.jpg",
+    "previewUrl" => "images/works/juliettelizotte.jpg",
   ],
   [
     "title" => "An Internet Cosmology",
@@ -42,10 +44,10 @@ $works = [
     "previewUrl" => "images/works/geoffreylillemon.jpg",
   ],
   [
-    "title" => "Choose Your Future",
+    "title" => "CYF Cutscenes",
     "author" => "Joshua Citarella",
     "slug" => "joshuacitarella",
-    "url" => "http://joshuacitarella.com/index.html",
+    "url" => "https://joshuacitarella.com/index.html",
     "previewUrl" => "images/works/joshuacitarella.jpg",
   ],
   [
@@ -63,19 +65,29 @@ $works = [
     "previewUrl" => "images/works/yinjuchen.jpg",
   ],
   [
-    "title" => "—",
+    "title" => "Mind Chasm",
     "author" => "Aamon Hawk",
     "slug" => "aamonhawk",
     "url" => null,
     "previewUrl" => "images/works/aamonhawk.jpg",
   ],
+
+  // [
+  //   "title" => "Global Weirding",
+  //   "author" => "Erik Davis ",
+  //   "slug" => "erikdavis",
+  //   "url" => null,
+  //   "previewUrl" => "images/works/erikdavis.jpg",
+  // ],
   [
-    "title" => "Global Weirding",
-    "author" => "Erik Davis ",
-    "slug" => "erikdavis",
+    "title" => "Weird commentary",
+    "author" => "Special Guest",
+    "slug" => "specialguest",
     "url" => null,
-    "previewUrl" => "images/works/erikdavis.jpg",
+    "previewUrl" => "images/works/specialguest.jpg",
   ],
+
+
 ];
 
 $numogramSvg = <<< EOT
@@ -142,43 +154,43 @@ $numogramSvg = <<< EOT
     <g id="numo-blur" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="item9" transform="translate(209.500000, 614.757470)">
             <circle id="circle9" fill="#00FF95" opacity="0.600000024" filter="url(#filter-1)" transform="translate(30.960243, 31.000000) rotate(-270.000000) translate(-30.960243, -31.000000) " cx="30.960243" cy="31" r="29.9374566"></circle>
-            <image id="image9" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-e3507d25ccb9.gif"></image>
+            <image id="image9" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-2c940e7f912e.gif"></image>
         </g>
         <g id="item8" transform="translate(209.500000, 521.452397)">
             <circle id="circle8" fill="#00FF95" opacity="0.600000024" filter="url(#filter-2)" transform="translate(30.960243, 31.000000) rotate(-270.000000) translate(-30.960243, -31.000000) " cx="30.960243" cy="31" r="29.9374566"></circle>
-            <image id="image8" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-4cc8e65f6666.gif"></image>
+            <image id="image8" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-3f6dc7c74582.gif"></image>
         </g>
         <g id="item7" transform="translate(370.765171, 225.570535)">
             <circle id="circle7" fill="#00FF95" opacity="0.600000024" filter="url(#filter-3)" transform="translate(30.999943, 31.000000) rotate(-270.000000) translate(-30.999943, -31.000000) " cx="30.9999434" cy="31" r="29.9374566"></circle>
-            <image id="image7" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-7a9dfca7f5aa.gif"></image>
+            <image id="image7" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-4fbead33b112.gif"></image>
         </g>
         <g id="item6" transform="translate(221.576789, 49.937457)">
             <circle id="circle6" fill="#00FF95" opacity="0.600000024" filter="url(#filter-4)" transform="translate(31.000000, 31.000000) rotate(-270.000000) translate(-31.000000, -31.000000) " cx="31" cy="31" r="29.9374566"></circle>
-            <image id="image6" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-33c4be34d1b2.gif"></image>
+            <image id="image6" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-5c59c6b751ed.gif"></image>
         </g>
         <g id="item5" transform="translate(88.854065, 235.050730)">
             <circle id="circle5" fill="#00FF95" opacity="0.600000024" filter="url(#filter-5)" transform="translate(31.000000, 31.000000) rotate(-270.000000) translate(-31.000000, -31.000000) " cx="31" cy="31" r="29.9374566"></circle>
-            <image id="image5" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-36bb7d3c2c03.gif"></image>
+            <image id="image5" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-7e81e595dc32.gif"></image>
         </g>
         <g id="item4" transform="translate(48.937457, 294.925643)">
             <circle id="circle4" fill="#00FF95" opacity="0.600000024" filter="url(#filter-6)" transform="translate(31.000000, 31.000000) rotate(-270.000000) translate(-31.000000, -31.000000) " cx="31" cy="31" r="29.9374566"></circle>
-            <image id="image4" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-50a767d3e5d0.gif"></image>
+            <image id="image4" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-04235e7913de.gif"></image>
         </g>
         <g id="item3" transform="translate(140.246699, 49.937457)">
             <circle id="circle3" fill="#00FF95" opacity="0.600000024" filter="url(#filter-7)" transform="translate(31.000000, 31.000000) rotate(-270.000000) translate(-31.000000, -31.000000) " cx="31" cy="31" r="29.9374566"></circle>
-            <image id="image3" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-79ea82af1d22.gif"></image>
+            <image id="image3" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-51973c6e94ae.gif"></image>
         </g>
         <g id="item2" transform="translate(324.362057, 159.209173)">
             <circle id="circle2" fill="#00FF95" opacity="0.600000024" filter="url(#filter-8)" transform="translate(31.000000, 31.000000) rotate(-270.000000) translate(-31.000000, -31.000000) " cx="31" cy="31" r="29.9374566"></circle>
-            <image id="image2" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-0404c435dcc1.gif"></image>
+            <image id="image2" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-96789dafcefc.gif"></image>
         </g>
         <g id="item1" transform="translate(209.500000, 428.147325)">
             <circle id="circle1" fill="#00FF95" opacity="0.600000024" filter="url(#filter-9)" transform="translate(30.960243, 31.000000) rotate(-270.000000) translate(-30.960243, -31.000000) " cx="30.960243" cy="31" r="29.9374566"></circle>
-            <image id="image1" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-483aea8b630f.gif"></image>
+            <image id="image1" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-a51aa07d228c.gif"></image>
         </g>
         <g id="item0" transform="translate(209.500000, 708.062543)">
             <circle id="circle0" fill="#00FF95" opacity="0.600000024" filter="url(#filter-10)" transform="translate(30.960243, 31.000000) rotate(-270.000000) translate(-30.960243, -31.000000) " cx="30.960243" cy="31" r="29.9374566"></circle>
-            <image id="image0" x="0" y="0" width="62" height="62" xlink:href="images/gif-1s/ezgif-2-b0facbce0e42.gif"></image>
+            <image id="image0" x="10" y="10" width="42" height="42" xlink:href="images/gif-c/ezgif-6-b8a5530ba414.gif"></image>
         </g>
         <path d="M258.192789,147.83055 C246.676807,98.0658852 178.260305,98.0658852 164.887716,147.83055" id="Line-5-Copy-8" stroke="#01FE92" stroke-width="2" opacity="0.5" stroke-linecap="square" filter="url(#filter-11)" transform="translate(211.540253, 129.168801) rotate(-180.000000) translate(-211.540253, -129.168801) "></path>
         <path d="M335.711985,711.071756 C324.196003,661.307091 255.779501,661.307091 242.406912,711.071756" id="Line-5-Copy-8" stroke="#01FE92" stroke-width="2" opacity="0.5" stroke-linecap="square" filter="url(#filter-12)" transform="translate(289.059449, 692.410007) rotate(-270.000000) translate(-289.059449, -692.410007) "></path>
@@ -251,14 +263,16 @@ EOT;
   <div id="ui" class="hide home">
     <div id="numogram"><?= $numogramSvg ?></div>
     <div id="top" class="font-m">
-      <a onclick="openHome();" class="font-shiny pointer no-u">&</a>
+      <a onclick="openHome();" class="font-shiny pointer no-u">
+        <img class="cursor-hover" width="40px" src="images/gif-c/ezgif-6-51973c6e94ae.gif" />
+      </a>
       <a onclick="handleAudioClick();" class="audio-control font-s font-soft font-white pointer no-u">TOGGLE AUDIO</a>
     </div>
     <div id="bottom" class="font-m">
       <div>
         <p class="title font-shiny" onclick="openWork(lastHoveredWork);"></p>
         <p class="author font-shiny d-md-none" onclick="openWork(lastHoveredWork);"></p>
-        <p class="font-shiny d-md-none" onclick="openWork(lastHoveredWork);">&raquo;</p>
+        <p class="btn-mob font-shiny hide d-md-none" ontouchstart="openWork(lastHoveredWork);" onclick="openWork(lastHoveredWork);">OPEN &raquo;</p>
       </div>
       <p class="author font-shiny d-none d-md-block"></p>
     </div>
@@ -266,7 +280,9 @@ EOT;
   
   <div class="mmodal hide" id="modal-work">
     <div id="top-ui" class="font-m">
-      <a onclick="closeWork();" class="font-shiny pointer no-u">&</a>
+      <a onclick="closeWork();" class="font-shiny pointer no-u">
+        <img class="cursor-hover" width="40px" src="images/gif-c/ezgif-6-51973c6e94ae.gif" />
+      </a>
     </div>
     <div class="mmodal-bg"></div>
     <div class="mmodal-content"></div>
@@ -283,11 +299,11 @@ EOT;
               <div id="p5-morph"></div>
               <p class="font-m font-shiny">Media, medicine and magick in a world out of control</p>
               <div class="font-s">
-                <a onclick="scrollToInfo();" class="font-soft font-white pointer no-u">INFORMATION</a>
-                &nbsp;&nbsp;&nbsp;
-                <a onclick="closeHome();" class="font-soft font-white pointer no-u">ENTER THE EXHIBITION</a>
-                &nbsp;&nbsp;&nbsp;
-                <a onclick="handleAudioClick();" class="audio-control font-soft font-white pointer no-u">TOGGLE AUDIO</a>
+                <a onclick="scrollToInfo();" class="font-soft font-white lh-l pointer no-u">INFORMATION</a>
+                <span class="d-none d-sm-inline">&nbsp;&nbsp;&nbsp;</span><span class="d-sm-none"><br /></span>
+                <a onclick="closeHome();" class="font-soft font-white lh-l pointer no-u">ENTER THE EXHIBITION</a>
+                <span class="d-none d-sm-inline">&nbsp;&nbsp;&nbsp;</span><span class="d-sm-none"><br /></span>
+                <a onclick="handleAudioClick();" class="audio-control font-soft font-white lh-l pointer no-u">TOGGLE AUDIO</a>
               </div>
             </div>
           </div>
@@ -325,6 +341,9 @@ EOT;
                   <p class="max mb-2">
                     Weird Gnosis is a project curated by Inez de Coo and Marc Tuters and produced by <a href="https://impakt.nl/" target="_blank" class="font-green">IMPAKT</a>. The web-project is supported by the Creative Industries Fund NL, City of Utrecht, and Democracy & Media Foundation and created by Alex Piacentini. Sound design by Marco Fasoli.
                   </p>
+                  <p class="max mb-2">
+                    <img src="images/logos.svg" class="logos mt-3" />
+                  </p>
                 </div>
               </div>
               <div class="col-lg-8">
@@ -358,6 +377,9 @@ EOT;
                   </p>
                   <p class="max mb-2">
                     In contrast to the ‘turn on, tune in, drop out’ ethos, taking nootropics or ‘smart drugs’ has gained popularity in the tech industry as a way of unlocking the mind and being able to work harder and faster. Nootropics include commercially available combination ‘stacks’ as well as microdoses of LSD and psilocybin mushrooms. The AI driving this video was trained on image datasets of psychedelic rock posters, LSD blotter art, brains, glass architecture, sacred geometry, broken glass and lizard skin, while the AI soundtrack is generated from binaural beats, crystal bowl sound baths, ASMR keyboard typing, and music by The Doors. The machine-learning imagery, which is halted before it coheres into recognisable patterns, echoes the saturated, colourful imagery associated with psychedelia. Evoking a 1960s liquid light show, The Doors proposes AI as a generator of a new psychedelic experience for the nootropics age, provoking hallucinations of how to see and control the future, optimise the brain for labour and live forever.
+                  </p>
+                  <p class="max mb-2">
+                    This is an online approximation of a multimedia installation commissioned by Edith-Russ-Haus für Medienkunst, de Young Museum, and Van Abbemuseum.
                   </p>
                 </div>
                 <div class="font-s font-soft mb-4 pb-2">
@@ -394,9 +416,6 @@ EOT;
                   </p>
                   <p class="max mb-2">
                     Gaze into the mind of Brian Rose as he uncovers dark and forbidden ‘truths’ about the world from the demigod David Icke.
-                  </p>
-                  <p class="max mb-2">
-                    This text follows later
                   </p>
                 </div>
                 
@@ -484,6 +503,9 @@ EOT;
                   <p class="max mb-2">
                     Weird Gnosis is a project curated by Inez de Coo and Marc Tuters and produced by <a href="https://impakt.nl/" target="_blank" class="font-green">IMPAKT</a>. The web-project is supported by the Creative Industries Fund NL, City of Utrecht, and Democracy & Media Foundation and created by Alex Piacentini. Sound design by Marco Fasoli.
                   </p>
+                  <p class="max mb-2">
+                    <img src="images/logos.svg" class="logos mt-3" />
+                  </p>
                 </div>
               </div>
             </div>
@@ -501,7 +523,7 @@ var lastHoveredWork = null;
 const soundtrack = document.createElement('audio');
 
 var persp = 250;
-var perspMin = 2000;
+var perspMin = 1000;
 var perspMax = 2;
 var body = document.body;
 var space = document.getElementById("space");
@@ -614,6 +636,12 @@ function openHome () {
 function loadWorkContent (slug) {
   $("#modal-work .mmodal-content").empty();
   var callUrl = "works/"+ slug +".php";
+  
+  <?php /*
+  var callUrl = "<?= WG_SITE_URL ?>/works/"+ slug +".php";
+  */ ?>
+
+  console.log(callUrl);
   $.get(callUrl, function(data) {
     $("#modal-work .mmodal-content").html(data);
     $("#modal-work").removeClass("hide");
@@ -641,7 +669,7 @@ function handleAudioClick () {
 function scrollToInfo () {
   $("#modal-home .mmodal-content").animate({
     scrollTop: $("#home-texts").offset().top - 100
-  }, 600);
+  }, 1200);
 }
 
 // -----------------------------------------------------------------------------
@@ -707,10 +735,12 @@ if (typeof soundtrack.loop == 'boolean') {
 
 
 var interval = 50; // 200ms interval
+var fadeAudio;
 var vol = undefined;
 var inc = 0.05;
 
 function fadein (audio) {
+  clearInterval(fadeAudio);
   if (!audio.readyState) {
     return false;
   }  
@@ -718,31 +748,42 @@ function fadein (audio) {
   audio.volume = 0;
   vol = 0;
   audio.play();
-  var fadeout = setInterval(function () {
+  fadeAudio = setInterval(function () {
     if (vol < targetVolume && vol < 1) {
-      audio.volume = vol + inc;
-      vol += inc;
+      if (vol > 0.95) {
+        vol = 1;
+      } else {
+        vol += inc;
+      }
+      audio.volume = vol;
+      console.log(audio.volume, vol)
     }
     else {
-      clearInterval(fadeout);
+      clearInterval(fadeAudio);
     }
   }, interval);
 }
 
 function fadeout (audio) {
+  clearInterval(fadeAudio);
   if (!audio.readyState) {
     return false;
   }  
   var targetVolume = 0;
   vol = audio.volume;
-  var fadeout = setInterval(function () {
+  fadeAudio = setInterval(function () {
     if (vol > 0) {
-      audio.volume = vol - inc;
-      vol -= inc;
+      if (vol < 0.05) {
+        vol = 0;
+      } else {
+        vol -= inc;
+      }
+      audio.volume = vol;
+      console.log(audio.volume, vol)
     }
     else {
       audio.pause();
-      clearInterval(fadeout);
+      clearInterval(fadeAudio);
     }
   }, interval);
 }
@@ -796,19 +837,37 @@ document.addEventListener('keydown', function (e) {
 });
 
 $("[id^='item']").mouseover(function () {
+  // $(["[id^='preview-']"]).addClass("hide");
+  $(".preview").addClass("hide");
+  
   var id = this.id.split("item")[1];
   console.log("in", id);
   var work = works[id];
   lastHoveredWork = work.slug;
-  $("#preview-" + id).removeClass("hide");
+  
+  setTimeout(function () {
+    $("#preview-" + id).removeClass("hide");
+    $("#bottom .btn-mob").removeClass("hide");
+  }, 200);
+
+  // $("#preview-" + id).removeClass("hide");
   $("#bottom .title").text(work.title);
   $("#bottom .author").text(work.author);
+
+  // debugger;
 }).mouseout(function () {
+  // debugger;
+  
   var id = this.id.split("item")[1];
   console.log("out", id);
   $("#preview-" + id).addClass("hide");
   $("#bottom .title").text("");
   $("#bottom .author").text("");
+
+  setTimeout(function () {
+    $("#bottom .btn-mob").addClass("hide");
+  }, 200);
+
 }).click(function () {
   if (!window.USER_CAN_TOUCH) {
     openWork(lastHoveredWork);

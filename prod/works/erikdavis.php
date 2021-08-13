@@ -1,5 +1,5 @@
 <div id="work">
-  <div class="my-5 px-md-3 max-w">
+  <div class="my-5 px-2 px-lg-4 max-w">
     <div class="font-m">
       <h2 class="font-shiny text-center font-m mb-5 pb-3">
         Global Weirding
