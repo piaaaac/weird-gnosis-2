@@ -64,29 +64,30 @@ $works = [
     "url" => "https://vimeo.com/242858283/22db947793",
     "previewUrl" => "images/works/yinjuchen.jpg",
   ],
-  [
-    "title" => "Mind Chasm",
-    "author" => "Aamon Hawk",
-    "slug" => "aamonhawk",
-    "url" => null,
-    "previewUrl" => "images/works/aamonhawk.jpg",
-  ],
+
 
   // [
-  //   "title" => "Global Weirding",
-  //   "author" => "Erik Davis ",
-  //   "slug" => "erikdavis",
+  //   "title" => "Mind Chasm",
+  //   "author" => "Aamon Hawk",
+  //   "slug" => "aamonhawk",
   //   "url" => null,
-  //   "previewUrl" => "images/works/erikdavis.jpg",
+  //   "previewUrl" => "images/works/aamonhawk.jpg",
   // ],
   [
-    "title" => "Weird commentary",
-    "author" => "Special Guest",
-    "slug" => "specialguest",
+    "title" => "Cherrypicker",
+    "author" => "Ellie Wyatt",
+    "slug" => "elliewyatt",
     "url" => null,
-    "previewUrl" => "images/works/specialguest.jpg",
+    "previewUrl" => "images/works/elliewyatt.jpg",
   ],
 
+  [
+    "title" => "Weird commentary on 2 December",
+    "author" => "Erik Davis ",
+    "slug" => "erikdavis",
+    "url" => null,
+    "previewUrl" => "images/works/erikdavis.jpg",
+  ],
 
 ];
 
@@ -408,6 +409,7 @@ EOT;
                     Much of today’s discourse is routed through social media and algorithmic recommendations. In CYF Cutscenes, each link represents one node of content that young ideologues might encounter online while en route to metapolitical ideas. Political speech is being curtailed by the increasingly narrow constraints of social media, so many of these videos may soon disappear.
                   </p>
                 </div>
+                <!--  
                 <div class="font-s font-soft mb-4 pb-2">
                   <p class="max mb-2">
                     AAMON HAWK (USA)
@@ -416,6 +418,21 @@ EOT;
                   </p>
                   <p class="max mb-2">
                     Gaze into the mind of Brian Rose as he uncovers dark and forbidden ‘truths’ about the world from the demigod David Icke.
+                  </p>
+                </div>
+                -->
+                <div class="font-s font-soft mb-4 pb-2">
+                  <p class="max mb-2">
+                    ELIE WYATT
+                    <br />cherrypicker (2021)
+                    <br />Video, infinite duration
+                    <br />Sound by Aubrey Jackson Blake
+                  </p>
+                  <p class="max mb-2">
+                    cherrypicker is an infinitely looping video which explores how photographic practices are used to support and validate conspiracies and belief systems. Responding to the rampant proliferation of photo-as-(pseudo)evidence in 21st century online cultures, the work highlights how the contemporary photographic detail is hijacked to promote myriad agendas, from UFO conspiracies to time travel and the cult of celebrity. Focusing on the circle as a powerful graphic mechanism used repeatedly to denote an area of special importance within the photograph, the work seeks to indicate the increasingly entangled boundaries between insider and outsider, natural and supernatural, belief and knowledge, fact and fiction.
+                  </p>
+                  <p class="max mb-2">
+                    Mimicking the artist’s own experiences of image consumption and information onslaught in oversaturated online spaces, cherrypicker flashes through over a thousand found images in a fast-paced looping sequence, immersing the viewer in an eerie and uncomfortable world of Kate Middleton’s knees and top-secret military operations. The work is accompanied by a sound track by Aubrey Jackson Blake comprising ominous sonic interpretations of computer systems and sci-fi cinema.
                   </p>
                 </div>
                 

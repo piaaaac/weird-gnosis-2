@@ -1,9 +1,15 @@
 <div id="work">
   <div class="my-5 px-2 px-lg-4 max-w">
     <div class="font-m">
+
+      <div class="text-center mb-5 pb-5">
+        <img src="works/aamonhawk/aamonhawk-temp.jpg" style="width: 100%; max-width: 450px;" />
+      </div>
+
       <p class="font-shiny text-center font-m mb-5 pb-3">
         Mind Chasm. Commissioned work available soon
       </p>
+
     </div>
   </div>
 </div>
