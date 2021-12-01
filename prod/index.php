@@ -369,7 +369,7 @@ EOT;
                 </div>
                 <div class="font-s font-soft mb-4 pb-2">
                   <p class="max mb-2">
-                    ZACH BLAS (United Kingdom)
+                    ZACH BLAS (USA/United Kingdom)
                     <br />The Doors (2019)
                     <br />Video, duration 41 min 25 sec
                   </p>
@@ -423,7 +423,7 @@ EOT;
                 -->
                 <div class="font-s font-soft mb-4 pb-2">
                   <p class="max mb-2">
-                    ELIE WYATT
+                    ELLIE WYATT (United Kingdom)
                     <br />cherrypicker (2021)
                     <br />Video, infinite duration
                     <br />Sound by Aubrey Jackson Blake
