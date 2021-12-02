@@ -2,7 +2,7 @@
   <div class="my-5 px-2 px-lg-4 max-w">
     <div class="font-m">
 
-      <p class="font-shiny m-5 p-5 text-center">
+      <p class="font-shiny mx-lg-5 px-lg-5 my-5 py-5 text-center">
         On December 2nd IMPAKT TV will feature a discussion about the exhibition with Erik Davis, which will subsequently be archived here.
       </p>
 

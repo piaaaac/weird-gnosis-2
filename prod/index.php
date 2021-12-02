@@ -74,7 +74,7 @@ $works = [
   //   "previewUrl" => "images/works/aamonhawk.jpg",
   // ],
   [
-    "title" => "Cherrypicker",
+    "title" => "cherrypicker",
     "author" => "Ellie Wyatt",
     "slug" => "elliewyatt",
     "url" => null,
@@ -273,7 +273,10 @@ EOT;
       <div>
         <p class="title font-shiny" onclick="openWork(lastHoveredWork);"></p>
         <p class="author font-shiny d-md-none" onclick="openWork(lastHoveredWork);"></p>
-        <p class="btn-mob font-shiny hide d-md-none" ontouchstart="openWork(lastHoveredWork);" onclick="openWork(lastHoveredWork);">OPEN &raquo;</p>
+        
+        <!-- <p class="btn-mob font-shiny hide d-md-none" ontouchstart="openWork(lastHoveredWork);" onclick="openWork(lastHoveredWork);">OPEN &raquo;</p> -->
+        <p class="btn-mob font-shiny hide" ontouchstart="openWork(lastHoveredWork);" onclick="openWork(lastHoveredWork);">OPEN &raquo;</p>
+
       </div>
       <p class="author font-shiny d-none d-md-block"></p>
     </div>
@@ -864,7 +867,12 @@ $("[id^='item']").mouseover(function () {
   
   setTimeout(function () {
     $("#preview-" + id).removeClass("hide");
-    $("#bottom .btn-mob").removeClass("hide");
+    
+    // $("#bottom .btn-mob").removeClass("hide");
+    if (window.USER_CAN_TOUCH) {
+      $("#bottom .btn-mob").removeClass("hide");
+    }
+
   }, 200);
 
   // $("#preview-" + id).removeClass("hide");

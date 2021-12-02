@@ -280,19 +280,59 @@ main { display: none; }
   background-color: transparent !important;
 }
 
-@media only screen and (max-width: 425px) {
-  #ui #bottom {
-    pointer-events: none;
-    .btn-mob {
-      opacity: 1;
-      pointer-events: all;
-      &.hide {
-        opacity: 0;
-        pointer-events: none;
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media only screen and (max-width: 425px) {
+//   #ui #bottom {
+//     pointer-events: none;
+//     .btn-mob {
+//       opacity: 1;
+//       pointer-events: all;
+//       &.hide {
+//         opacity: 0;
+//         pointer-events: none;
+//       }
+//     }
+//   }
+// }
+
+#ui #bottom {
+  pointer-events: none;
+  .btn-mob {
+    opacity: 1;
+    pointer-events: all;
+    &.hide {
+      opacity: 0;
+      pointer-events: none;
+      display: none;
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 img.logos {
   opacity: 0.7;
