@@ -3,10 +3,22 @@
     <div class="font-m">
 
       <p class="font-shiny mx-lg-5 px-lg-5 my-5 py-5 text-center">
-        On December 2nd IMPAKT TV will feature a discussion about the exhibition with Erik Davis, which will subsequently be archived here.
+        Weird Gnosis with Erik Davis, IMPAKT TV on occult rituals and esoteric psychedelia. This event was recorded on 2 December 2021 at Planet IMPAKT.
       </p>
 
-      <h2 class="font-shiny text-center font-m mb-5 pb-3">
+      <!--  
+      via https://avexdesigns.com/blog/responsive-youtube-embed
+      .video-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
+      .video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+      -->
+      <div 
+      style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+        <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        src="https://www.youtube.com/embed/2RwmD43gOw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <h2 class="font-shiny text-center font-m my-5 py-3">
         GLOBAL WEIRDING
       </h2>
 
